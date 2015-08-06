@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css'>
+    <title>Get your car</title>
+</head>
+<body>
+    <div class='container'>
+        <h1>Post a Car</h1>
+        <!--will need to add price, mileage, and pic later....-->
+        <p>Enter the desired car type</p>
+        {% if cars is not empty %}
+            <p>Here is your posted car:</p>
+            <ul>
+                {% for car in cars %}
+                    <li>{{ cars.getModel}}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+
+
+        <form action='/cars' method='post'>
+            <div class='form-group'>
+                <label for='make_model'>Enter your car model:</label>
+                <input id='make_model' name='make_model' class='form-control' type='text'>
+            </div>
+<!--            <div class='form-group'>
+                <label for='miles'>Enter your desired miles:</label>
+                <input id='miles' name='miles' class='form-control' type='number'>
+            </div> -->
+            <button type='submit' class='btn-success'>Create</button>
+        </form>
+    </div>
+</body>
+</html>
