@@ -7,7 +7,7 @@
 <body>
     <div class='container'>
         <h1>Post a Car</h1>
-        <!--will need to add price, mileage, and pic later....-->
+
         <p>Enter the desired car type</p>
         {% if cars is not empty %}
             <p>Here is your posted car:</p>
@@ -16,7 +16,7 @@
                     <li>{{ car.getModel }}</li>
                     <li>{{ car.getPrice }}</li>
                     <li>{{ car.getMiles }}</li>
-                    <li>{{ car.getImage }}</li>
+                    <li><img src= {{ car.getImage }}></li>
                 {% endfor %}
             </ul>
         {% endif %}
@@ -37,11 +37,15 @@
             </div>
             <div class='form-group'>
                 <label for='image_path'>Enter a picture of your car</label>
-                <input id='image_path' name='image_path' class='form-control' type='text'>
+                <input id='image_path' name='image_path' class='form-control' type='url'>
             </div>
 
 
             <button type='submit' class='btn-success'>Create</button>
+        </form>
+
+        <form action ='/delete_cars' method='post'>
+            <button type='submit' class='btn-danger'>Clear</button>
         </form>
     </div>
 </body>

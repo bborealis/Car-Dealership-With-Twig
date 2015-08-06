@@ -5,7 +5,7 @@ class Car {
     private $miles;
     private $image_path;
 
-    function __construct($make_model, $price, $image_path, $miles = 5000){
+    function __construct($make_model, $price, $miles, $image_path){
         $this->make_model = $make_model;
         $this->price = $price;
         $this->miles = $miles;
@@ -36,7 +36,7 @@ class Car {
     function getMiles() {
         return $this->miles;
     }
-    function getImage () {
+    function getImage() {
         return $this->image_path;
     }
 
