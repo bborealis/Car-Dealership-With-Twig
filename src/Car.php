@@ -42,16 +42,16 @@ class Car {
 
     function save()
     {
-        array_push($_SESSION['cars_matching_search'], $this);
+        array_push($_SESSION['cars_list'], $this);
     }
     static function getAll()
     {
-        return $_SESSION['cars_matching_search'];
+        return $_SESSION['cars_list'];
     }
 
     static function deleteAll()
     {
-        $_SESSION['cars_matching_search'] = array();
+        $_SESSION['cars_list'] = array();
     }
 }
 ?>
