@@ -22,7 +22,7 @@
 
 
     $app->post("/cars", function() use ($app) {
-        $car = new Car($_POST['make_model']);
+        $car = new Car($_POST['make_model'], $_POST['price'], $_POST['miles'], $_POST['image_path']);
         $car->save();
         return $app['twig']->render('post_car.html.twig', array('newcar' => $car));
     });

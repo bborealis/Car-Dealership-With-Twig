@@ -13,7 +13,10 @@
             <p>Here is your posted car:</p>
             <ul>
                 {% for car in cars %}
-                    <li>{{ cars.getModel}}</li>
+                    <li>{{ car.getModel }}</li>
+                    <li>{{ car.getPrice }}</li>
+                    <li>{{ car.getMiles }}</li>
+                    <li>{{ car.getImage }}</li>
                 {% endfor %}
             </ul>
         {% endif %}
@@ -24,10 +27,20 @@
                 <label for='make_model'>Enter your car model:</label>
                 <input id='make_model' name='make_model' class='form-control' type='text'>
             </div>
-<!--            <div class='form-group'>
-                <label for='miles'>Enter your desired miles:</label>
+            <div class='form-group'>
+                <label for='price'>Enter your car's price:</label>
+                <input id='price' name='price' class='form-control' type='number'>
+            </div>
+            <div class='form-group'>
+                <label for='miles'>Enter your car's mileage</label>
                 <input id='miles' name='miles' class='form-control' type='number'>
-            </div> -->
+            </div>
+            <div class='form-group'>
+                <label for='image_path'>Enter a picture of your car</label>
+                <input id='image_path' name='image_path' class='form-control' type='text'>
+            </div>
+
+
             <button type='submit' class='btn-success'>Create</button>
         </form>
     </div>
